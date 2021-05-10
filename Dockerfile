@@ -15,6 +15,10 @@ WORKDIR /root/catkin_ws
 RUN cd src/ && git clone --recursive https://github.com/kiyoshiiriemon/little_slam
 RUN source /opt/ros/kinetic/setup.bash && catkin_make
 ENV ROS_PACKAGE_PATH=/root/catkin_ws:/opt/ros/kinetic/share:$ROS_PACKAGE_PATH
+
+## install tmux##
+WORKDIR /root
+RUN apt install -y tmux
 ##init position##
 WORKDIR /root
 
